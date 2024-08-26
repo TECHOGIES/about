@@ -8,6 +8,206 @@
   <link rel="icon" href="techogies-large.jpg" type="image/x-icon">
   <!-- Social Media Icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f9;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      position: fixed;
+      width: 250px;
+      height: 100%;
+      background-color: #292b2c;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+      transform: translateX(0);
+    }
+
+    .sidebar .logo {
+      width: 120px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+    }
+
+    .sidebar h2 {
+      margin: 0;
+      font-size: 2rem;
+      color: #d9534f;
+    }
+
+    .sidebar p {
+      font-style: italic;
+      color: #f7f7f7;
+    }
+
+    .sidebar nav a {
+      display: block;
+      padding: 15px;
+      margin: 15px 0;
+      text-decoration: none;
+      color: white;
+      background-color: #343a40;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #d9534f;
+      color: white;
+    }
+
+    /* Social Icons Styling */
+    .social-icons {
+      margin-top: 30px;
+    }
+
+    .social-icons a {
+      font-size: 2rem;
+      margin: 10px;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #d9534f;
+    }
+
+    /* Sidebar Toggle Button Styling */
+    #toggle-sidebar {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: #292b2c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1000;
+      display: none;
+    }
+
+    /* Main Content Styling */
+    .main-content {
+      margin-left: 250px;
+      padding: 20px;
+      background-color: #fff;
+      min-height: 100vh;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #292b2c;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Course Card Styling */
+    .course-card {
+      background-color: #f8f9fa;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-left: 5px solid #d9534f;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .course-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Contact Section */
+    .contact-info a {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #d9534f;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Form */
+    #contact-form {
+      background-color: #f8f9fa;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #contact-form button {
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #contact-form button:hover {
+      background-color: #c9302c;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .main-content {
+        margin-left: 0;
+      }
+
+      #toggle-sidebar {
+        display: block;
+      }
+
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.active {
+        transform: translateX(0);
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Sidebar Toggle Button for Mobile -->
@@ -16,7 +216,7 @@
   <div class="sidebar">
     <img src="techogies-large.jpg" alt="Techogies Logo" class="logo">
     <h2>Techogies</h2>
-    <p>&lt;The Code School/&gt;</p>
+    <p>&lt;< The Code School />/&gt;</p>
     <nav>
       <a href="#about">About Us</a>
       <a href="#courses">Courses</a>
@@ -32,20 +232,20 @@
   <div class="main-content">
     <section id="about">
       <h1>About Us</h1>
-      <p>Welcome to Techogies: The Code School by Uzair Ahmed. We are an institute dedicated to providing top-notch education in Cyber Security, Web Development, and Coding. Our mission is to empower the next generation of developers with the skills and knowledge they need to succeed in the digital world.</p>
+      <p>Welcome to Techogies: The Code School, Sample Website by Uzair Ahmed. We are an institute dedicated to providing top-notch education in Cyber Security, Web Development, and Coding. Our mission is to empower the next generation of developers with the skills and knowledge they need to succeed in the digital world.</p>
     </section>
 
     <section id="courses">
       <h1>Our Courses</h1>
-      <div class="course-card">
+      <div class="course-card" onclick="window.location.href='https://wa.link/4jrun4'">
         <h2>Cyber Security</h2>
         <p>Learn the fundamentals of cyber security, ethical hacking, and protecting digital assets. Our course is designed for beginners and professionals alike.</p>
       </div>
-      <div class="course-card">
+      <div class="course-card" onclick="window.location.href='https://wa.link/4jrun4'">
         <h2>Web Development</h2>
         <p>Master HTML, CSS, JavaScript, and modern web frameworks to create dynamic and responsive websites.</p>
       </div>
-      <div class="course-card">
+      <div class="course-card" onclick="window.location.href='https://wa.link/4jrun4'">
         <h2>Coding Bootcamp</h2>
         <p>Intensive training in Python, Java, and C++ to jumpstart your programming career.</p>
       </div>
@@ -61,22 +261,23 @@
       </div>
 
       <!-- Contact Form -->
-      <form id="contact-form">
-        <h2>Get in Touch</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit">Submit</button>
+      <form id="contact-form" onsubmit="sendWhatsAppMessage(); return false;">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" required>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
       </form>
     </section>
   </div>
 
-  <!-- JavaScript -->
+  <!-- Sidebar Toggle Script -->
   <script>
-    // Sidebar Toggle
     const toggleSidebar = document.getElementById('toggle-sidebar');
     const sidebar = document.querySelector('.sidebar');
 
@@ -84,31 +285,14 @@
       sidebar.classList.toggle('active');
     });
 
-    // Smooth Scrolling for Sidebar Links
-    document.querySelectorAll('.sidebar nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Contact Form Handling
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
+    function sendWhatsAppMessage() {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
-      
-      // Basic Validation
-      if (name && email && message) {
-        alert('Thank you for your message, ' + name + '!');
-        this.reset(); // Reset form
-      } else {
-        alert('Please fill in all fields.');
-      }
-    });
+
+      const whatsappLink = `https://wa.me/919335723334?text=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMessage:%20${encodeURIComponent(message)}`;
+      window.open(whatsappLink, '_blank');
+    }
   </script>
 </body>
 </html>
