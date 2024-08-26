@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techogies: The Code School</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="techogies-large.jpg" type="image/x-icon">
+  <!-- Social Media Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <!-- Sidebar Toggle Button for Mobile -->
+  <button id="toggle-sidebar">☰</button>
+
+  <div class="sidebar">
+    <img src="techogies-large.jpg" alt="Techogies Logo" class="logo">
+    <h2>Techogies</h2>
+    <p>&lt;The Code School/&gt;</p>
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#courses">Courses</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <div class="social-icons">
+      <a href="https://youtube.com/@techogies?si=J_ZaqobnnuCjXhxd" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/techogiesacademy?igsh=cnlod2hkYTVhNnhu" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.link/4jrun4" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <section id="about">
+      <h1>About Us</h1>
+      <p>Welcome to Techogies: The Code School by Uzair Ahmed. We are an institute dedicated to providing top-notch education in Cyber Security, Web Development, and Coding. Our mission is to empower the next generation of developers with the skills and knowledge they need to succeed in the digital world.</p>
+    </section>
+
+    <section id="courses">
+      <h1>Our Courses</h1>
+      <div class="course-card">
+        <h2>Cyber Security</h2>
+        <p>Learn the fundamentals of cyber security, ethical hacking, and protecting digital assets. Our course is designed for beginners and professionals alike.</p>
+      </div>
+      <div class="course-card">
+        <h2>Web Development</h2>
+        <p>Master HTML, CSS, JavaScript, and modern web frameworks to create dynamic and responsive websites.</p>
+      </div>
+      <div class="course-card">
+        <h2>Coding Bootcamp</h2>
+        <p>Intensive training in Python, Java, and C++ to jumpstart your programming career.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h1>Contact Us</h1>
+      <p>Follow us on our social media platforms to stay updated on our latest courses and events.</p>
+      <div class="contact-info">
+        <a href="https://youtube.com/@techogies?si=J_ZaqobnnuCjXhxd" target="_blank">YouTube: Techogies</a><br>
+        <a href="https://www.instagram.com/techogiesacademy?igsh=cnlod2hkYTVhNnhu" target="_blank">Instagram: Techogies Academy</a><br>
+        <a href="https://wa.link/4jrun4" target="_blank">WhatsApp Us</a>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contact-form">
+        <h2>Get in Touch</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Sidebar Toggle
+    const toggleSidebar = document.getElementById('toggle-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+
+    toggleSidebar.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+
+    // Smooth Scrolling for Sidebar Links
+    document.querySelectorAll('.sidebar nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Contact Form Handling
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      // Basic Validation
+      if (name && email && message) {
+        alert('Thank you for your message, ' + name + '!');
+        this.reset(); // Reset form
+      } else {
+        alert('Please fill in all fields.');
+      }
+    });
+  </script>
+</body>
+</html>
